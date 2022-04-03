@@ -1,0 +1,20 @@
+{
+  "name": "deliv_expresslab2_unit2",
+  "version": "1.0.0",
+  "description": "Practice setting up express server, creating get routes, use url/query parameters, setting up express applications, creating custom routes, practice using parameters from a request.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "express",
+    "server",
+    "practice"
+  ],
+  "author": "Calvin Harris",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

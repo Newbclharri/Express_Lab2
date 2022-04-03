@@ -37,6 +37,7 @@ requestHandler.get("/greeting/:name", (req, res) =>{ //This is akin to initializ
     res.send(GREETING + ", " + req.params.name + "! Happy to have you here!");
 });
 
+//Tip Calculator
 //localhost300/tip/100/.15
 requestHandler.get("/tip/:total/:tipPercent", (req, res) =>{
     let total_bill = parseFloat(req.params.total);
@@ -45,6 +46,19 @@ requestHandler.get("/tip/:total/:tipPercent", (req, res) =>{
     total_tip = total_bill * tip_Percent;
 
     res.send(tip_Percent*100 + "% of " + req.params.total + " = $" + total_tip);
+});
+
+/*
+    Magic 8 Ball
+    localhost3000/magic/:question
+    question = Will%20I%20become%20a%20successful%20and%20employed%20developer%20?
+*/
+requestHandler.get("/magic/:question", (req, res)=>{
+    const like_magic = {response: ["It is certain", "It is dedcidedly so","Without a doubt", "Yes definitely","You may rely on it", "As I see it yes", "Most likely", "Outlook good","Yes", "Signs point to yes", "Reply hazy try again", "Ask again later","Better not tell you now", "Cannot predict now", "Concentrate and ask again","Don't count on it", "My reply is no", "My sources say no","Outlook not so good", "Very doubtful"]}
+    const length = like_magic.response.length;
+    let index = Math.floor(Math.random()*length);
+    console.log(index);
+    res.send(like_magic.response[index]);
 });
 
 ///////////////////////////

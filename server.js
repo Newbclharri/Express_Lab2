@@ -58,7 +58,7 @@ requestHandler.get("/magic/:question", (req, res)=>{
     const length = like_magic.response.length;
     let index = Math.floor(Math.random()*length);
     console.log(index);
-    res.send(like_magic.response[index]);
+    res.send(`<h1>${like_magic.response[index]}</h1>`);
 });
 
 ///////////////////////////
@@ -66,5 +66,5 @@ requestHandler.get("/magic/:question", (req, res)=>{
 ///////////////////////////
 
 requestHandler.listen(PORT, ()=>{
-    console.log("Listening on port" + PORT)
+    console.log("Listening on port " + PORT)
 });
